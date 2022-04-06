@@ -51,7 +51,7 @@ const addTodo = text => {
         setNewTodo('')
         setTodos(newTodos);
     } else {
-        console.log('text', text)
+        console.log('Enter Todo', text)
         setInputEmpty(true);
     }
 };
@@ -74,6 +74,7 @@ const editTodo = inx => {
 const saveTodo = (inx) => {
     const newTodos = [...todos];
     newTodos[inx].isEditing = !newTodos[inx].isEditing;
+    console.log(noteRef.current[inx]);
     newTodos[inx].text = noteRef.current[inx].value;
     setTodos(newTodos);
 }

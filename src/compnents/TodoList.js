@@ -29,6 +29,8 @@ const TodoList = ({ theme, todos, completeTodo, editTodo, deleteTodo, saveTodo, 
 
     const handleToggle = (value, inx) => () => {
         const currentIndex = checked.indexOf(value);
+        console.log(value,inx);
+        console.log(currentIndex);
         const newChecked = [...checked];
 
         if (currentIndex === -1) {
@@ -44,7 +46,9 @@ const TodoList = ({ theme, todos, completeTodo, editTodo, deleteTodo, saveTodo, 
         <ThemeProvider theme={theme}>
             <List className={classes.root}>
             {todos.map((todo, inx) => {
+                console.log(inx,todo);
                 const labelId = `list-todo-${todo}`;
+                console.log(labelId)
 
                 return (
                     <ListItem
@@ -87,7 +91,7 @@ const TodoList = ({ theme, todos, completeTodo, editTodo, deleteTodo, saveTodo, 
                                 :
                                 <>
                                     <label
-                                        htmlFor="task" // better accessibility with HTML
+                                        htmlFor="task" 
                                         className="visuallyhidden"
                                     >
                                         {todo.text}
